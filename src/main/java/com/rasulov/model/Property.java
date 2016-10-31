@@ -19,7 +19,7 @@ public class Property {
 
     @GeneratedValue
     @Id
-    @Column(nullable = false, name = "property_listing_id")
+    @Column(name = "property_listing_id")
     private Long propertyListingId;
 
     @Column(length = 25, nullable = false, name = "property_type")

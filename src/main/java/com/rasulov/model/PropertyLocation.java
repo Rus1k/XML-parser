@@ -19,7 +19,7 @@ public class PropertyLocation {
 
     @GeneratedValue
     @Id
-    @Column(nullable = false,name = "location_id")
+    @Column(name = "location_id")
     private Long locationId;
 
     @Column(nullable = false,length = 50,name = "region")

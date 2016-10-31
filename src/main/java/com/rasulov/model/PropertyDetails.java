@@ -21,7 +21,7 @@ public class PropertyDetails {
 
     @GeneratedValue
     @Id
-    @Column(nullable = false, name = "details_id")
+    @Column(name = "details_id")
     private Long detailsId;
 
     @Column(nullable = false, name = "price")

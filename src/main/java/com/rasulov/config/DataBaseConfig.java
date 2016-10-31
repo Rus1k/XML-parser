@@ -36,12 +36,6 @@ public class DataBaseConfig {
     public JdbcTemplate getJdbcTemplate() {
         return new JdbcTemplate(dataSource());
     }
-    @Bean
-    public RestTemplate restTemplate() {
-        RestTemplate restTemplate = new RestTemplate();
-        restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
-        return restTemplate;
-    }
 
     @Bean(name = "datasource")
     public DataSource dataSource() {
