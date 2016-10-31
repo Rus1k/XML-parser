@@ -1,0 +1,32 @@
+# yandex.xml
+#property
+property_listing_id=//realty-feed/offer/@internal-id
+property_type=//realty-feed/offer/category
+property_status="current" for all
+listing_type=//realty-feed/offer/type
+#listingAgent 
+listing_agent_id=EMPTY
+#property_location
+location_id
+region=//realty-feed/offer/location/region
+district=//realty-feed/offer/location/district
+Locality_name=//realty-feed/offer/location/locality-name
+sub_locality_name=//realty-feed/offer/location/sub-locality-name
+street_address=//realty-feed/offer/location/address
+building_number=EMPTY
+#property_details
+details_id
+price=//realty-feed/offer/price/value
+currency=//realty-feed/offer/price/currency
+floor_num=//realty-feed/offer/floor
+floor_total=//realty-feed/offer/floors-total
+general_area=//realty-feed/offer/area/value
+living_area=//realty-feed/offer/living-space/value
+kitchen_area=//realty-feed/offer/kitchen-space/value
+num_rooms=//realty-feed/offer/rooms
+land_square=//realty-feed/offer/lot-area/value
+house_type=//realty-feed/offer/category
+description=//realty-feed/offer/description
+
+property_images=EMPTY
+property_videos=EMPTY
