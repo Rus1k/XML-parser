@@ -1,5 +1,7 @@
 package com.rasulov.web;
 
+import com.rasulov.service.UnmarshallingService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -7,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+
+import javax.xml.bind.JAXBException;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -14,14 +18,22 @@ import java.io.FileOutputStream;
 @Controller
 public class FileUploadController {
 
-    @RequestMapping(value="/upload", method=RequestMethod.GET)
-    public @ResponseBody String provideUploadInfo() {
+    @Autowired
+    private UnmarshallingService unmarshallingService;
+
+    @RequestMapping(value = "/upload", method = RequestMethod.GET)
+    public
+    @ResponseBody
+    String provideUploadInfo() throws JAXBException {
+        unmarshallingService.unmarshallingTest();
         return "Вы можете загружать файл с использованием того же URL.";
     }
 
-    @RequestMapping(value="/upload", method=RequestMethod.POST)
-    public @ResponseBody String handleFileUpload(@RequestParam("name") String name,
-                                                 @RequestParam("file") MultipartFile file){
+    @RequestMapping(value = "/upload", method = RequestMethod.POST)
+    public
+    @ResponseBody
+    String handleFileUpload(@RequestParam("name") String name,
+                            @RequestParam("file") MultipartFile file) {
         if (!file.isEmpty()) {
             try {
                 byte[] bytes = file.getBytes();
